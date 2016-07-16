@@ -16,4 +16,12 @@ describe Menu do
     printed_menu = 'Sandwich $2.50, Soup $2.00'
     expect(menu.prints).to eq(printed_menu)
   end
+
+  it 'tells if a dish is on the menu' do
+    expect(menu.has_dish?(:sandwich)).to be true
+  end
+
+  it 'tells if a dish is not on the menu' do
+    expect(menu.has_dish?(:beef)).to be false
+  end
 end

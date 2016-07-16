@@ -1,15 +1,13 @@
 require 'takeaway'
 
 describe Takeaway do
-  # As a customer
-  #   # So that I can check if I want to order something
-  #   # I would like to see a list of dishes with prices
+
   subject(:takeaway) { described_class.new(menu: menu) }
 
-  let(:menu) { double(:menu, list: list_menu) }
-  let(:list_menu) {'sandwich $4.50'}
+  let(:menu) { double(:menu, prints: printed_menu) }
+  let(:printed_menu) {'sandwich $4.50'}
 
-    it 'to see if want to make an order, see a list of dishes with prices' do
-      expect(takeaway.list_menu).to eq(list_menu)
+    it 'shows the menu' do
+      expect(takeaway.print_menu).to eq(printed_menu)
     end
 end
